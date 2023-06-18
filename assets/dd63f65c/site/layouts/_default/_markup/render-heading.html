@@ -1,0 +1,5 @@
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}
+{{- if and (ge .Level .Page.Site.Params.anchors.min) (le .Level .Page.Site.Params.anchors.max) }}{{" " -}}
+<a aria-label="Link to this section: {{ .Text | safeHTML }}" class="anchor-link" href="#{{ .Anchor | safeURL }}"></a>
+{{- end -}}
+</h{{ .Level }}>
